@@ -1,0 +1,48 @@
+.body {
+    width: 100%;
+    color: white;
+    background-color: rgb(52, 47, 47);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sort {
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }
+    .list{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    .modal-window {
+        .close {
+            width: 100px;
+            height: 20px;
+            background-color:transparent;
+            color: white;
+            border: 1px solid black;
+        }
+        width: 500px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: red;
+    }
+}

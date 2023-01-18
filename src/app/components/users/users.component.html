@@ -1,0 +1,39 @@
+<div class="body">
+    <div class="sort">
+        <button mat-raised-button color="accent" (click)="sortArrLastName()">по фамилии</button>
+        <button mat-raised-button color="accent" (click)="sortArrName()">по имени</button>
+        <button mat-raised-button color="accent" (click)="sortArrPutName()">по отчеству</button>
+        <button mat-raised-button color="accent" (click)="sortArrId()">по ID</button>
+        <button mat-raised-button color="accent" (click)="sortArrphone()">по телефону</button>
+        <button mat-raised-button color="accent" (click)="sortArrBirthday()">по дню рождения</button>
+        <button mat-raised-button color="accent" (click)="sortArrEmail()">по гендеру</button>
+        <button mat-raised-button color="accent" (click)="sortArrVisits()">по номеру посещениям</button>
+        <button mat-raised-button color="accent" (click)="sortArrSumm()">по сумме</button>
+        <button mat-raised-button color="accent" (click)="sortArrDiscount()">по скидке</button>
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>введите логин</mat-label>
+            <input [(ngModel)]="findName" matInput placeholder="введите имя" (input)="findInArray()">
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="closeModalWindow()">отправить push уведомление</button>
+    </div>
+   <div class="list">
+        <app-user-item *ngFor="let user of users" [user]="user"></app-user-item>
+   </div> 
+</div>
+
+<div *ngIf="opensModal" class="modal">
+    
+    <div class="modal-window">
+        <button class="close" (click)="closeModalWindow()">закрыть</button>
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>введите id</mat-label>
+            <input [(ngModel)]="idUser" matInput placeholder="введите id" >
+        </mat-form-field>
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>введите сообщение</mat-label>
+            <input [(ngModel)]="message" matInput placeholder="введите сообщение">
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="sendPush()">отправить</button>
+    </div>
+</div>
+
